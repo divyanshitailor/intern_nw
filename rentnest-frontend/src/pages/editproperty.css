@@ -1,0 +1,636 @@
+/* =========================================================
+   RENTNEST — EDIT PROPERTY
+   PREMIUM DARK THEME
+========================================================= */
+
+.edit-property-page {
+  min-height: 100vh;
+  padding: 70px 0 120px;
+
+  background:
+    radial-gradient(
+      circle at 12% 5%,
+      rgba(195, 154, 107, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 25%,
+      rgba(110, 85, 60, 0.08),
+      transparent 32%
+    ),
+    #0d0d0d;
+
+  color: #eeeae4;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.edit-property-container {
+  width: min(1050px, calc(100% - 40px));
+  margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.edit-property-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 45px;
+}
+
+.edit-property-label {
+  display: block;
+
+  margin-bottom: 17px;
+
+  color: #a99073;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+.edit-property-header h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.edit-property-header h1 em {
+  color: #c39a6b;
+  font-style: italic;
+}
+
+.edit-property-header p {
+  max-width: 540px;
+
+  margin: 20px 0 0;
+
+  color: #858079;
+
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   DASHBOARD BUTTON
+========================================================= */
+
+.edit-cancel-button {
+  flex-shrink: 0;
+
+  padding: 11px 16px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+
+  color: #a7a19a;
+
+  background: rgba(255,255,255,0.025);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.edit-cancel-button:hover {
+  border-color: rgba(195,154,107,0.45);
+
+  color: #c39a6b;
+
+  background: rgba(195,154,107,0.05);
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.edit-property-card {
+
+  padding: 45px;
+
+  border: 1px solid rgba(255,255,255,0.085);
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.045),
+      rgba(255,255,255,0.015)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.035);
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.edit-form-section {
+
+  padding-bottom: 42px;
+  margin-bottom: 42px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.edit-section-heading {
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  margin-bottom: 30px;
+}
+
+
+.edit-section-heading > span {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(195,154,107,0.35);
+  border-radius: 10px;
+
+  color: #c39a6b;
+
+  font-family: Georgia, serif;
+  font-size: 0.82rem;
+}
+
+
+.edit-section-heading h2 {
+
+  margin: 0;
+
+  color: #e8e2da;
+
+  font-family: Georgia, serif;
+
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+
+
+.edit-section-heading p {
+
+  margin: 5px 0 0;
+
+  color: #6e6a65;
+
+  font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.edit-form-row {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+
+.edit-three-columns {
+
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.edit-form-group {
+
+  margin-bottom: 20px;
+}
+
+
+.edit-form-group label {
+
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #77726c;
+
+  font-size: 0.6rem;
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.edit-form-group input,
+.edit-form-group select,
+.edit-form-group textarea {
+
+  width: 100%;
+
+  padding: 15px 17px;
+
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 11px;
+
+  outline: none;
+
+  background: rgba(255,255,255,0.035);
+
+  color: #e8e3dc;
+
+  font-family: inherit;
+  font-size: 0.82rem;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.edit-form-group input:focus,
+.edit-form-group select:focus,
+.edit-form-group textarea:focus {
+
+  border-color: rgba(195,154,107,0.65);
+
+  background: rgba(255,255,255,0.05);
+
+  box-shadow:
+    0 0 0 3px rgba(195,154,107,0.07);
+}
+
+
+.edit-form-group input::placeholder,
+.edit-form-group textarea::placeholder {
+
+  color: #57534e;
+}
+
+
+.edit-form-group textarea {
+
+  resize: vertical;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.edit-form-group select {
+
+  appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #80786e 50%),
+    linear-gradient(135deg, #80786e 50%, transparent 50%);
+
+  background-position:
+    calc(100% - 18px) 52%,
+    calc(100% - 13px) 52%;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+
+.edit-form-group select option {
+
+  background: #181818;
+
+  color: #eeeae4;
+}
+
+
+/* =========================================================
+   SAVE AREA
+========================================================= */
+
+.edit-submit-section {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-top: 5px;
+}
+
+
+.edit-save-info {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.edit-save-icon {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(195,154,107,0.25);
+  border-radius: 10px;
+
+  color: #c39a6b;
+
+  background: rgba(195,154,107,0.06);
+
+  font-size: 0.8rem;
+}
+
+
+.edit-save-info div:last-child {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.edit-save-info strong {
+
+  color: #d8d2ca;
+
+  font-size: 0.75rem;
+}
+
+
+.edit-save-info span {
+
+  color: #64605b;
+
+  font-size: 0.65rem;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.edit-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.edit-secondary-button {
+
+  padding: 13px 18px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+
+  color: #8b857e;
+
+  background: transparent;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+
+.edit-secondary-button:hover {
+
+  color: #ddd7cf;
+
+  border-color: rgba(255,255,255,0.2);
+}
+
+
+.edit-save-button {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  min-width: 160px;
+
+  padding: 14px 17px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #c39a6b;
+
+  color: #111;
+
+  font-size: 0.74rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.edit-save-button:hover {
+
+  background: #d2ad82;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(195,154,107,0.2);
+}
+
+
+.edit-save-button span {
+
+  color: #111;
+
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.edit-property-page .spinner-border {
+
+  color: #c39a6b !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .edit-property-page {
+
+    padding: 45px 0 80px;
+
+  }
+
+
+  .edit-property-container {
+
+    width: min(100% - 24px, 1050px);
+
+  }
+
+
+  .edit-property-header {
+
+    display: block;
+
+  }
+
+
+  .edit-property-header h1 {
+
+    font-size: 3.2rem;
+
+  }
+
+
+  .edit-cancel-button {
+
+    display: inline-block;
+
+    margin-top: 22px;
+
+  }
+
+
+  .edit-property-card {
+
+    padding: 25px 20px;
+
+    border-radius: 18px;
+
+  }
+
+
+  .edit-form-row,
+  .edit-three-columns {
+
+    grid-template-columns: 1fr;
+
+    gap: 0;
+
+  }
+
+
+  .edit-submit-section {
+
+    align-items: stretch;
+
+    flex-direction: column;
+
+  }
+
+
+  .edit-actions {
+
+    width: 100%;
+
+  }
+
+
+  .edit-secondary-button,
+  .edit-save-button {
+
+    flex: 1;
+
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .edit-property-card {
+
+    padding: 22px 16px;
+
+  }
+
+
+  .edit-save-info {
+
+    align-items: flex-start;
+
+  }

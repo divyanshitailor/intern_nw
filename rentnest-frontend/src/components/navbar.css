@@ -1,0 +1,534 @@
+/* =========================================================
+   RENTNEST — PREMIUM DARK NAVBAR
+   ========================================================= */
+
+.rentnest-navbar {
+  position: relative;
+
+  background: rgba(8, 8, 7, 0.88) !important;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+  box-shadow:
+    0 8px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.rentnest-logo {
+  display: flex;
+  align-items: center;
+
+  color: #f5f3ed !important;
+
+  font-size: 1.45rem;
+  font-weight: 800;
+
+  letter-spacing: -0.055em;
+
+  text-decoration: none;
+}
+
+.rentnest-logo:hover {
+  color: #f5f3ed !important;
+}
+
+
+/* logo mark */
+
+.rentnest-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35px;
+  height: 35px;
+
+  margin-right: 9px;
+
+  border: 1px solid rgba(201, 168, 106, 0.35);
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(201, 168, 106, 0.18),
+      rgba(201, 168, 106, 0.05)
+    );
+
+  color: #c9a86a;
+
+  font-size: 17px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   NAV LINKS
+   ========================================================= */
+
+.rentnest-nav-link {
+  position: relative;
+
+  color: #9a978f !important;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  padding: 9px 14px !important;
+
+  transition:
+    color 0.25s ease;
+}
+
+.rentnest-nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 14px;
+  right: 14px;
+  bottom: 3px;
+
+  height: 1px;
+
+  background: #c9a86a;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.25s ease;
+}
+
+.rentnest-nav-link:hover {
+  color: #f5f3ed !important;
+}
+
+.rentnest-nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.nav-login {
+  color: #d8d5cc !important;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.nav-login:hover {
+  color: #c9a86a !important;
+}
+
+
+/* =========================================================
+   GET STARTED / DASHBOARD
+   ========================================================= */
+
+.nav-signup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 40px;
+
+  padding: 10px 19px;
+
+  border: 1px solid #c9a86a;
+  border-radius: 8px;
+
+  background: #c9a86a;
+
+  color: #11100d !important;
+
+  font-size: 0.74rem;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 8px 25px rgba(201, 168, 106, 0.08);
+}
+
+.nav-signup:hover {
+  background: #e0c58e;
+
+  color: #11100d !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(201, 168, 106, 0.16);
+}
+
+
+/* =========================================================
+   USER GREETING
+   ========================================================= */
+
+.rentnest-navbar .text-muted {
+  color: #85827a !important;
+
+  font-size: 0.72rem !important;
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+/*
+   Your JSX currently has:
+   style={{ color: '#302821' }}
+
+   The rule below overrides that old brown color.
+*/
+
+.rentnest-navbar button.btn {
+  color: #9a978f !important;
+
+  border: 0;
+
+  background: transparent;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  transition: 0.25s ease;
+}
+
+.rentnest-navbar button.btn:hover {
+  color: #c9a86a !important;
+}
+
+
+/* =========================================================
+   MOBILE TOGGLER
+   ========================================================= */
+
+.rentnest-navbar .navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+
+  padding: 8px 10px;
+
+  border-radius: 8px;
+}
+
+
+/*
+   Bootstrap's default navbar icon is dark.
+   This makes it visible on the dark navbar.
+*/
+
+.rentnest-navbar .navbar-toggler-icon {
+  filter: invert(1);
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .rentnest-navbar .navbar-collapse {
+    margin-top: 18px;
+
+    padding: 18px 0 8px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+@media (max-width: 991px) {
+  .rentnest-navbar .navbar-collapse {
+    display: none;
+  }
+
+  .rentnest-navbar .navbar-collapse.show {
+    display: block;
+  }
+}
+  .rentnest-navbar .navbar-nav {
+    gap: 3px !important;
+  }
+
+  .rentnest-nav-link {
+    padding: 12px 5px !important;
+  }
+
+  .rentnest-nav-link::after {
+    display: none;
+  }
+
+  .rentnest-navbar .d-flex.align-items-center {
+    margin-top: 12px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-signup {
+    padding: 10px 18px;
+  }
+}
+
+
+/* =========================================================
+   PREMIUM DARK FOOTER
+   ========================================================= */
+
+.rentnest-footer {
+  position: relative;
+
+  padding: 85px 0 28px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(201, 168, 106, 0.055),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      #10100e 0%,
+      #080807 100%
+    );
+
+  color: #f5f3ed;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+
+  color: #f5f3ed !important;
+
+  font-size: 1.5rem;
+  font-weight: 800;
+
+  letter-spacing: -0.055em;
+
+  text-decoration: none;
+}
+
+.footer-logo:hover {
+  color: #f5f3ed !important;
+}
+
+
+/* logo icon */
+
+.footer-logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  margin-right: 9px;
+
+  border: 1px solid rgba(201, 168, 106, 0.35);
+  border-radius: 10px;
+
+  background: rgba(201, 168, 106, 0.09);
+
+  color: #c9a86a;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   FOOTER DESCRIPTION
+   ========================================================= */
+
+.footer-description {
+  max-width: 365px;
+
+  margin-top: 20px;
+
+  color: #77756d;
+
+  font-size: 0.82rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER HEADINGS
+   ========================================================= */
+
+.footer-heading {
+  position: relative;
+
+  margin-bottom: 21px;
+
+  color: #e8e4da;
+
+  font-size: 0.67rem;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+/* small gold line */
+
+.footer-heading::after {
+  content: "";
+
+  display: block;
+
+  width: 22px;
+  height: 1px;
+
+  margin-top: 9px;
+
+  background: #c9a86a;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.footer-links a,
+.footer-links span {
+  color: #77756d;
+
+  font-size: 0.79rem;
+
+  line-height: 1.4;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #c9a86a;
+
+  transform: translateX(3px);
+}
+
+
+/* contact */
+
+.footer-links span {
+  cursor: default;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+  margin-top: 65px;
+
+  padding-top: 23px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+  color: #57554f;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* =========================================================
+   FOOTER RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .rentnest-footer {
+    padding: 70px 0 25px;
+  }
+}
+
+
+@media (max-width: 767px) {
+
+  .rentnest-footer {
+    padding: 60px 0 23px;
+  }
+
+  .footer-description {
+    max-width: 100%;
+
+    margin-bottom: 10px;
+  }
+
+  .footer-bottom {
+    margin-top: 45px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .rentnest-footer {
+    padding-top: 50px;
+  }
+
+  .footer-logo {
+    font-size: 1.35rem;
+  }
+
+  .footer-heading {
+    margin-bottom: 17px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+}

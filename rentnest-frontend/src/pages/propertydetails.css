@@ -1,0 +1,810 @@
+/* =========================================
+   RENTNEST — PROPERTY DETAILS
+   PREMIUM DARK THEME
+========================================= */
+
+.property-details-page {
+  min-height: 100vh;
+  background: #0b0b0a;
+  color: #f3eee6;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.details-header {
+  padding: 45px 0 35px;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(200, 155, 109, 0.08),
+      transparent 35%
+    ),
+    #0b0b0a;
+}
+
+.details-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 38px;
+
+  color: #77736c;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.details-back:hover {
+  color: #c89b6d;
+  transform: translateX(-3px);
+}
+
+.details-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+}
+
+.details-label {
+  display: block;
+  margin-bottom: 14px;
+
+  color: #c89b6d;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.details-heading h1 {
+  margin: 0;
+
+  color: #f3eee6;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.6rem, 5vw, 4.7rem);
+  font-weight: 400;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.details-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 18px 0 0;
+
+  color: #858078;
+  font-size: 0.88rem;
+}
+
+.details-location span {
+  color: #c89b6d;
+}
+
+.details-status {
+  padding: 10px 16px;
+
+  border: 1px solid rgba(200, 155, 109, 0.25);
+  border-radius: 30px;
+
+  background: rgba(200, 155, 109, 0.08);
+  color: #c89b6d;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   IMAGE GALLERY
+========================================= */
+
+.details-gallery-section {
+  padding: 10px 0 70px;
+}
+
+.details-gallery {
+  display: grid;
+  gap: 8px;
+
+  height: 520px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+
+  background: #151513;
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.gallery-1 {
+  grid-template-columns: 1fr;
+}
+
+.gallery-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.gallery-3,
+.gallery-4 {
+  grid-template-columns: 1.4fr 0.6fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.gallery-image {
+  position: relative;
+
+  min-height: 0;
+
+  overflow: hidden;
+
+  background: #171715;
+}
+
+.gallery-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.05),
+    rgba(0, 0, 0, 0.18)
+  );
+}
+
+.gallery-image-0 {
+  grid-row: 1 / 3;
+}
+
+.gallery-1 .gallery-image-0 {
+  grid-row: auto;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.5s ease;
+}
+
+.gallery-image:hover img {
+  transform: scale(1.035);
+  filter: brightness(1.08);
+}
+
+
+/* IMAGE ERROR */
+
+.gallery-image-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(200, 155, 109, 0.08),
+      transparent 60%
+    ),
+    #151513;
+}
+
+.gallery-image-error::after {
+  content: "Image unavailable";
+
+  color: #6f6b64;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   NO IMAGE
+========================================= */
+
+.details-no-image {
+  height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(200, 155, 109, 0.08),
+      transparent 55%
+    ),
+    #151513;
+
+  color: #6f6b64;
+}
+
+.details-no-image span {
+  color: #c89b6d;
+  font-size: 4rem;
+}
+
+.details-no-image p {
+  margin-top: 12px;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.details-content-section {
+  padding-bottom: 120px;
+}
+
+
+/* =========================================
+   QUICK INFO
+========================================= */
+
+.details-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-bottom: 75px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.details-info-grid > div {
+  padding: 25px;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.details-info-grid > div:last-child {
+  border-right: none;
+}
+
+.info-label {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #66635d;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.details-info-grid strong {
+  color: #f0ebe3;
+
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.details-info-grid small {
+  margin-left: 5px;
+
+  color: #77736c;
+  font-size: 0.7rem;
+}
+
+
+/* =========================================
+   DETAILS SECTIONS
+========================================= */
+
+.details-section {
+  margin-bottom: 70px;
+}
+
+.details-section-label {
+  display: block;
+  margin-bottom: 14px;
+
+  color: #c89b6d;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.details-section h2 {
+  max-width: 620px;
+
+  margin: 0 0 22px;
+
+  color: #f3eee6;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.15rem;
+  font-weight: 400;
+
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.details-description {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #8e8981;
+
+  font-size: 0.9rem;
+  line-height: 1.9;
+
+  white-space: pre-wrap;
+}
+
+
+/* =========================================
+   AMENITIES
+========================================= */
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+
+  max-width: 680px;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 15px 17px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+
+  background: #151513;
+
+  color: #aaa49b;
+
+  font-size: 0.78rem;
+  font-weight: 600;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.amenity-item:hover {
+  border-color: rgba(200, 155, 109, 0.3);
+  background: #191916;
+
+  transform: translateY(-2px);
+}
+
+.amenity-item span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  background: rgba(200, 155, 109, 0.1);
+  color: #c89b6d;
+
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.no-amenities {
+  color: #68645e;
+  font-size: 0.82rem;
+}
+
+
+/* =========================================
+   RENT CARD
+========================================= */
+
+.rent-card {
+  position: sticky;
+  top: 100px;
+
+  padding: 31px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      transparent 50%
+    ),
+    #151513;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45);
+
+  backdrop-filter: blur(15px);
+}
+
+.rent-label {
+  display: block;
+
+  color: #706c65;
+
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.rent-price {
+  margin-top: 9px;
+
+  color: #c89b6d;
+
+  font-family: Georgia, serif;
+  font-size: 2.9rem;
+  font-weight: 500;
+
+  letter-spacing: -0.05em;
+}
+
+.rent-period {
+  color: #77736c;
+  font-size: 0.7rem;
+}
+
+.rent-divider {
+  height: 1px;
+
+  margin: 26px 0;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   RENT DETAILS
+========================================= */
+
+.rent-details {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.rent-details > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.rent-details span {
+  color: #77736c;
+  font-size: 0.75rem;
+}
+
+.rent-details strong {
+  color: #ddd7ce;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  text-align: right;
+}
+
+.rent-details .available-text {
+  color: #9ab184;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.rent-primary-button,
+.rent-secondary-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border-radius: 10px;
+
+  font-size: 0.77rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* PRIMARY */
+
+.rent-primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 28px;
+
+  border: none;
+
+  background: #f3eee6;
+  color: #11110f;
+}
+
+.rent-primary-button:hover {
+  background: #c89b6d;
+
+  transform: translateY(-2px);
+}
+
+.rent-primary-button span {
+  font-size: 1rem;
+}
+
+
+/* SECONDARY */
+
+.rent-secondary-button {
+  margin-top: 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: transparent;
+  color: #ddd7ce;
+}
+
+.rent-secondary-button:hover {
+  border-color: #c89b6d;
+  color: #c89b6d;
+}
+
+.rent-note {
+  margin: 17px 0 0;
+
+  color: #5f5c56;
+
+  font-size: 0.63rem;
+  line-height: 1.55;
+
+  text-align: center;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.details-loading {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #0b0b0a;
+  color: #77736c;
+}
+
+.details-spinner {
+  width: 36px;
+  height: 36px;
+
+  margin-bottom: 15px;
+
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-top-color: #c89b6d;
+
+  border-radius: 50%;
+
+  animation: details-spin 0.8s linear infinite;
+}
+
+@keyframes details-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.details-loading p {
+  font-size: 0.75rem;
+}
+
+
+/* =========================================
+   NOT FOUND
+========================================= */
+
+.details-not-found {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: #0b0b0a;
+
+  text-align: center;
+}
+
+.not-found-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(200, 155, 109, 0.2);
+  border-radius: 18px;
+
+  background: rgba(200, 155, 109, 0.08);
+
+  color: #c89b6d;
+
+  font-size: 2rem;
+}
+
+.details-not-found h2 {
+  color: #f3eee6;
+
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.details-not-found p {
+  color: #77736c;
+  font-size: 0.85rem;
+}
+
+.back-button {
+  margin-top: 15px;
+
+  padding: 12px 19px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+
+  background: #f3eee6;
+  color: #11110f;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.back-button:hover {
+  background: #c89b6d;
+  color: #11110f;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .details-header {
+    padding-top: 30px;
+  }
+
+  .details-heading {
+    display: block;
+  }
+
+  .details-heading h1 {
+    font-size: 2.7rem;
+  }
+
+  .details-status {
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .details-gallery {
+    height: 350px;
+    border-radius: 16px;
+  }
+
+  .gallery-3,
+  .gallery-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .details-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details-info-grid > div {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .details-info-grid > div:last-child {
+    border-bottom: none;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rent-card {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .details-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .details-gallery {
+    height: 300px;
+  }
+
+  .details-heading h1 {
+    font-size: 2.35rem;
+  }
+
+  .rent-card {
+    padding: 24px;
+  }
+
+  .rent-price {
+    font-size: 2.5rem;
+  }
+}

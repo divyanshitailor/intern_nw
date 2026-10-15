@@ -1,0 +1,668 @@
+/* =========================================================
+   RENTNEST — ADD PROPERTY
+   PREMIUM DARK THEME
+========================================================= */
+
+.add-property-page {
+  min-height: 100vh;
+  padding: 75px 0 120px;
+  background:
+    radial-gradient(
+      circle at 15% 5%,
+      rgba(184, 132, 82, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(115, 89, 61, 0.10),
+      transparent 30%
+    ),
+    #0d0d0d;
+
+  color: #f2eee8;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.add-property-container {
+  width: min(1050px, calc(100% - 40px));
+  margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.add-property-header {
+  margin-bottom: 45px;
+}
+
+.add-property-label {
+  display: block;
+  margin-bottom: 18px;
+
+  color: #a99073;
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.add-property-header h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.95;
+
+  font-weight: 400;
+  letter-spacing: -0.055em;
+}
+
+.add-property-header h1 em {
+  color: #c39a6b;
+  font-style: italic;
+}
+
+.add-property-header p {
+  max-width: 500px;
+  margin: 20px 0 0;
+
+  color: #8e8982;
+
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.add-property-card {
+  padding: 45px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.045),
+      rgba(255,255,255,0.018)
+    );
+
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.035);
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.form-section {
+  padding-bottom: 42px;
+  margin-bottom: 42px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.form-section:last-of-type {
+  margin-bottom: 0;
+}
+
+
+.form-section-heading {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 18px;
+
+  margin-bottom: 30px;
+}
+
+.form-section-heading > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border: 1px solid rgba(195,154,107,0.35);
+  border-radius: 10px;
+
+  color: #c39a6b;
+
+  font-family: Georgia, serif;
+  font-size: 0.85rem;
+}
+
+.form-section-heading h2 {
+  margin: 0;
+
+  color: #f0ece6;
+
+  font-family: Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+}
+
+.form-section-heading p {
+  margin: 5px 0 0;
+
+  color: #77736d;
+
+  font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+.form-row.three-columns {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #77736d;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+
+  width: 100%;
+
+  padding: 15px 17px;
+
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 11px;
+
+  outline: none;
+
+  background: rgba(255,255,255,0.035);
+
+  color: #eeeae4;
+
+  font-family: inherit;
+  font-size: 0.82rem;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #5f5b56;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+  border-color: rgba(195,154,107,0.65);
+
+  background: rgba(255,255,255,0.05);
+
+  box-shadow:
+    0 0 0 3px rgba(195,154,107,0.07);
+}
+
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.7;
+}
+
+
+/* SELECT */
+
+.form-group select {
+  appearance: none;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #8b8278 50%),
+    linear-gradient(135deg, #8b8278 50%, transparent 50%);
+
+  background-position:
+    calc(100% - 18px) 52%,
+    calc(100% - 13px) 52%;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.form-group select option {
+  background: #181818;
+  color: #eeeae4;
+}
+
+
+/* =========================================================
+   AMENITIES
+========================================================= */
+
+.amenities-selection {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+
+.amenity-option {
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 15px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 11px;
+
+  background: rgba(255,255,255,0.025);
+
+  color: #a8a39c;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.amenity-option:hover {
+
+  border-color: rgba(195,154,107,0.35);
+
+  background: rgba(195,154,107,0.05);
+
+  color: #ddd7cf;
+}
+
+
+.amenity-option input {
+  display: none;
+}
+
+
+.amenity-check {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 19px;
+  height: 19px;
+
+  border: 1px solid #48433e;
+  border-radius: 5px;
+
+  color: transparent;
+
+  font-size: 0.65rem;
+
+  transition: 0.2s ease;
+}
+
+
+.amenity-option.selected {
+
+  border-color: rgba(195,154,107,0.5);
+
+  background: rgba(195,154,107,0.08);
+
+  color: #ddd5ca;
+}
+
+
+.amenity-option.selected .amenity-check {
+
+  border-color: #c39a6b;
+
+  background: #c39a6b;
+
+  color: #111;
+}
+
+
+/* =========================================================
+   IMAGE UPLOAD
+========================================================= */
+
+.image-upload-box {
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 230px;
+
+  padding: 30px;
+
+  border: 1px dashed rgba(195,154,107,0.35);
+  border-radius: 15px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(195,154,107,0.055),
+      transparent 65%
+    );
+
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.image-upload-box:hover {
+
+  border-color: rgba(195,154,107,0.7);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(195,154,107,0.09),
+      transparent 65%
+    );
+}
+
+
+.image-upload-box input {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  inset: 0;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+
+.upload-icon {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 52px;
+  height: 52px;
+
+  margin-bottom: 15px;
+
+  border: 1px solid rgba(195,154,107,0.3);
+  border-radius: 15px;
+
+  color: #c39a6b;
+
+  font-size: 1.4rem;
+}
+
+
+.image-upload-box strong {
+
+  color: #ddd8d0;
+
+  font-size: 0.82rem;
+}
+
+
+.image-upload-box > span {
+
+  margin-top: 7px;
+
+  color: #66615b;
+
+  font-size: 0.68rem;
+}
+
+
+.image-upload-box small {
+
+  margin-top: 10px;
+
+  color: #c39a6b;
+
+  font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   PUBLISH AREA
+========================================================= */
+
+.publish-section {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-top: 10px;
+}
+
+
+.publish-section > div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+
+.publish-section strong {
+
+  color: #e4ded6;
+
+  font-size: 0.82rem;
+}
+
+
+.publish-section span {
+
+  color: #68645f;
+
+  font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   PUBLISH BUTTON
+========================================================= */
+
+.publish-button {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 35px;
+
+  min-width: 190px;
+
+  padding: 14px 18px;
+
+  border: none;
+  border-radius: 11px;
+
+  background: #c39a6b;
+
+  color: #111;
+
+  font-size: 0.76rem;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.publish-button:hover {
+
+  background: #d2ad82;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(195,154,107,0.2);
+}
+
+
+.publish-button span {
+
+  color: #111;
+
+  font-size: 1rem;
+}
+
+
+.publish-button:disabled {
+
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .add-property-page {
+    padding: 45px 0 80px;
+  }
+
+  .add-property-container {
+    width: min(100% - 24px, 1050px);
+  }
+
+  .add-property-header h1 {
+    font-size: 3.2rem;
+  }
+
+  .add-property-card {
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+  .form-row,
+  .form-row.three-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .amenities-selection {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .publish-section {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .publish-button {
+    width: 100%;
+  }
+
+  .image-upload-box {
+    min-height: 200px;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .amenities-selection {
+    grid-template-columns: 1fr;
+  }
+
+  .add-property-card {
+    padding: 22px 16px;
+  }
+}
