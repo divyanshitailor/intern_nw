@@ -53,12 +53,58 @@ Built originally as a PHP/MySQL solution and modernized into a scalable full-sta
 
 ## 💻 How to Run Locally (Local Setup Guide)
 
-Anyone cloning this repository can get the project up and running locally without extra global tools, except Node.js and MySQL/XAMPP.
+## ⚙️ Software Prerequisites
 
-### Prerequisites
-* [Node.js](https://nodejs.org/) (v18+ recommended)
-* [Git](https://git-scm.com/)
-* [MySQL Server / XAMPP](https://www.apachefriends.org/) (or a cloud MySQL database connection string)
+Project ko local machine par run karne ke liye pehle se yeh software installed hone chahiye:
+
+1. **[Node.js](https://nodejs.org/)** (v18.0.0 ya higher)
+2. **[Git](https://git-scm.com/)**
+3. **[XAMPP Server](https://www.apachefriends.org/)** / **[MySQL Workbench](https://www.mysql.com/products/workbench/)**
+4. **[VS Code](https://code.visualstudio.com/)**
+
+---
+
+## 🚀 How to Run This Project Locally
+
+### Step 1: Clone the Repository
+Terminal open karke project clone karein:
+- command: `git clone https://github.com/divyanshitailor/intern_nw`
+- command: `cd intern_nw`
+
+### Step 2: Local Database Setup
+1. XAMPP Control Panel open karke MySQL start karein.
+2. MySQL query run karke database banayein: `CREATE DATABASE rentnest_db;`
+3. Repository mein maujood SQL file ko `rentnest_db` database mein import karein.
+
+### Step 3: Backend Setup & Run (Root Folder)
+1. Project ke main root folder (`intern_nw`) mein rahein.
+2. Dependencies install karein: `npm install`
+3. Root folder par `.env` file banayein aur yeh text add karein:
+   PORT=5000
+   DB_HOST=localhost
+   DB_USER=root
+   DB_PASSWORD=your_mysql_password
+   DB_NAME=rentnest_db
+   DB_PORT=3306
+   JWT_SECRET=supersecretkey123
+4. Backend server start karein: `node server.js`
+
+### Step 4: Frontend Setup & Run (`rentnest-frontend`)
+1. Naya terminal open karke frontend directory mein jayein: `cd rentnest-frontend`
+2. Dependencies install karein: `npm install`
+3. `rentnest-frontend` folder mein `.env` file banayein aur add karein:
+   VITE_API_BASE_URL=http://localhost:5000
+4. Frontend dev server run karein: `npm run dev`
+5. Browser mein open karein: `http://localhost:5173`
+
+---
+
+## 📊 Database Schema Overview
+
+The relational database consists of 3 core tables:
+* `users` — Stores user profiles, credentials, and roles (`owner` / `tenant`).
+* `properties` — Stores listing details, location, pricing, and owner associations.
+* `saved_properties` — Maps bookmarked listings to user accounts.
 
 ---
 
