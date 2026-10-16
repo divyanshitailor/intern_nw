@@ -59,7 +59,7 @@ const verifyToken = (req, res, next) => {
 // ==========================================
 
 // REGISTER ROUTE
-app.post('/api/register', async (req, res) => {
+app.post(['/api/register', '/api/auth/register'], (req, res) => {
   const { name, email, password, role } = req.body;
 
   if (!name || !email || !password) {
@@ -96,8 +96,8 @@ app.post('/api/register', async (req, res) => {
 });
 
 // LOGIN ROUTE
-app.post('/api/login', (req, res) => {
-  const { email, password } = req.body;
+app.post(['/api/login', '/api/auth/login'], (req, res) => { 
+    const { email, password } = req.body;
 
   if (!email || !password) {
     return res.status(400).json({ message: 'Email and password are required.' });
@@ -183,8 +183,12 @@ app.get('/api/properties', (req, res) => {
         : prop.images
     }));
 
-    res.json({ properties: formattedProperties });
-  });
+    res.json({
+      properties: formattedProperties,
+      success: true,
+      data: formattedProperties
+    }); 
+   });
 });
 
 // GET ONE PROPERTY

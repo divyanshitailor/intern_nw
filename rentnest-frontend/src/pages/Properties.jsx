@@ -77,7 +77,7 @@ export default function Properties() {
             </div>
 
             <div className="property-count">
-              <strong>{properties.length}</strong>
+              <strong>{properties?.length || 0}</strong>
               <span>homes available</span>
             </div>
 
@@ -149,10 +149,12 @@ export default function Properties() {
 
               {properties.map((prop) => {
 
-                const thumbnail =
-                  prop.images && prop.images.length > 0
-                    ? `http://localhost:5000${prop.images[0]}`
-                    : null;
+                const rawImg = prop.images && prop.images.length > 0 ? prop.images[0] : null;
+                const thumbnail = rawImg
+                  ? rawImg.startsWith('http')
+                    ? rawImg
+                    : `http://localhost:5000${rawImg}`
+                  : null;
 
                 return (
 

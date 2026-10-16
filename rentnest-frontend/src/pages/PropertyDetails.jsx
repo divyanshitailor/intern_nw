@@ -102,7 +102,7 @@ export default function PropertyDetails() {
                   key={index}
                 >
                   <img
-                    src={`http://localhost:5000${img}`}
+                    src={img?.startsWith('http') ? img : `http://localhost:5000${img}`}
                     alt={`${property.title} ${index + 1}`}
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';

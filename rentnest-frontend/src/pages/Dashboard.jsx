@@ -233,11 +233,12 @@ return ( <main className="dashboard-page">
 
               myProperties.map((prop) => {
 
-                const image =
-                  prop.images &&
-                  prop.images.length > 0
-                    ? `http://localhost:5000${prop.images[0]}`
-                    : null;
+                const rawImg = prop.images && prop.images.length > 0 ? prop.images[0] : null;
+                const image = rawImg
+                  ? rawImg.startsWith('http')
+                    ? rawImg
+                    : `http://localhost:5000${rawImg}`
+                  : null;
 
                 return (
 
@@ -382,11 +383,12 @@ return ( <main className="dashboard-page">
 
             savedProperties.map((prop) => {
 
-              const image =
-                prop.images &&
-                prop.images.length > 0
-                  ? `http://localhost:5000${prop.images[0]}`
-                  : null;
+              const rawImg = prop.images && prop.images.length > 0 ? prop.images[0] : null;
+              const image = rawImg
+                ? rawImg.startsWith('http')
+                  ? rawImg
+                  : `http://localhost:5000${rawImg}`
+                : null;
 
               return (
 
@@ -403,7 +405,7 @@ return ( <main className="dashboard-page">
                       className="dashboard-wishlist-image"
                       style={{
                         backgroundImage: image
-                          ? `url(${image})`
+                          ? `url("${image}")`
                           : 'none',
                       }}
                     >
