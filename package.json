@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "npm --prefix rentnest-frontend install && npm --prefix rentnest-frontend run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },

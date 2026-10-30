@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm --prefix rentnest-frontend install && npm --prefix rentnest-frontend run build",
+  "outputDirectory": "rentnest-frontend/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
