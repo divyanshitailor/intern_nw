@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './contact.css';
 
 export default function Contact() {
@@ -257,13 +258,7 @@ export default function Contact() {
 
             </div>
 
-            <a
-              href="/properties"
-              className="contact-explore"
-            >
-              Explore properties
-              <span>→</span>
-            </a>
+            <Link to="/properties" className="contact-explore">Explore properties <span>→</span></Link>
 
           </div>
 
