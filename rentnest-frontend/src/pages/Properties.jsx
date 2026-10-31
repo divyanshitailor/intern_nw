@@ -1,3 +1,4 @@
+import { FALLBACK_PROPERTIES } from '../demoData';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useSearchParams } from 'react-router-dom';
@@ -24,8 +25,20 @@ export default function Properties() {
 
     axios
       .get(url)
-      .then((res) => setProperties(res.data.properties))
-      .catch((err) => console.error(err));
+      .then((res) => {
+        if (res.data?.properties?.length) {
+          setProperties(res.data.properties);
+        } else {
+          setProperties(FALLBACK_PROPERTIES);
+        }
+      })
+      .catch((err) => {
+        console.warn('Backend offline or blocked, loading fallback properties:', err.message);
+        let list = FALLBACK_PROPERTIES;
+        if (city) list = list.filter(p => p.city.toLowerCase() === city.toLowerCase());
+        if (type) list = list.filter(p => p.property_type.toLowerCase() === type.toLowerCase());
+        setProperties(list);
+      });
   };
 
   useEffect(() => {

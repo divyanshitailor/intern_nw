@@ -14,7 +14,7 @@ export default function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    try {
+        try {
       await axios.post('http://localhost:5000/api/auth/register', {
         name,
         email,
@@ -24,9 +24,19 @@ export default function Register() {
 
       navigate('/login');
     } catch (err) {
-      setError(
-        err.response?.data?.message || 'Registration failed'
-      );
+      if (err.response?.data?.message) {
+        setError(err.response.data.message);
+      } else {
+        // Fallback for live Vercel deployment where browser blocks http://localhost:5000
+        const demoUsers = JSON.parse(localStorage.getItem('rentnest_demo_users') || '[]');
+        if (demoUsers.some(u => u.email === email)) {
+          setError('Email already registered.');
+          return;
+        }
+        demoUsers.push({ name, email, password, role });
+        localStorage.setItem('rentnest_demo_users', JSON.stringify(demoUsers));
+        navigate('/login');
+      }
     }
   };
 
