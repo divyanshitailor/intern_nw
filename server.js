@@ -16,20 +16,24 @@ app.use('/uploads', express.static('uploads'));
 const upload = require('./middleware/upload');
 
 // Database Connection
-const db = mysql.createConnection({
-  host: process.env.DB_HOST || 'localhost',
+const db = mysql.createPool({
+  host: process.env.DB_HOST || '127.0.0.1',
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_NAME || 'rentnest_db',
-  port: process.env.DB_PORT || 3306
+  port: Number(process.env.DB_PORT) || 3306,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
 
-db.connect(err => {
+db.getConnection((err, connection) => {
   if (err) {
-    console.error('Database connection failed:', err.message);
+    console.error('❌ Database connection failed:', err.message);
     return;
   }
-  console.log('Database connected successfully!');
+  console.log('✅ Database connected successfully!');
+  connection.release();
 });
 
 // JWT Secret Key Dynamic Setup
